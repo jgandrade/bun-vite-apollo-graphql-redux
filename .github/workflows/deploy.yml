@@ -1,0 +1,38 @@
+name: Run Deploy
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  run_deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node-version}}
+
+      - name: Check Dependency Cache
+        uses: actions/cache@v4
+        with:
+          path: ./node_modules
+          key: ${{runner.os}}-node-${{hashFiles('./bun.lockb')}}
+
+      - name: Install Dependencies
+        run: 
+          bun install
+
+      - name: Run ESLint and Prettier
+        run: bun run lint
+
+      - name: Run Build
+        run: bun run build
