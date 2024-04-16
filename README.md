@@ -1,30 +1,74 @@
-# React + TypeScript + Vite
+# Apollograph
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Apollograph is a project built with TypeScript, React, and Apollo for managing GraphQL data in a Redux-friendly way. It comes preconfigured with tooling for development, testing, linting, and building.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+To get started with Apollograph, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone this repository.
+2. Install dependencies using bun:
 
-- Configure the top-level `parserOptions` property like this:
+   ```bash
+   bun install
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+3. Start the development server:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   ```bash
+   bun run dev
+   ```
+
+4. Run test:
+
+   ```bash
+   bun run test
+   ```
+5. Run Cypress test:
+
+   ```bash
+   bun run cypress-test
+   ```
+
+6. Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
+
+## Available Scripts
+
+In the project directory, you can run the following scripts:
+
+- `dev`: Starts the development server.
+- `build`: Builds the app for production.
+- `lint`: Lints the codebase using ESLint.
+- `test`: Runs Jest tests.
+- `cypress-test`: Runs Cypress tests.
+- `preview`: Previews the production build.
+
+## Dependencies
+
+- **React** and **React DOM**: JavaScript library for building user interfaces.
+- **React Router DOM**: Declarative routing for React.
+- **Redux Toolkit**: State management library for React applications.
+- **Redux Persist**: Persist and rehydrate a Redux store.
+- **Apollo Client**: State management library for GraphQL.
+- **Vite**: Next-generation frontend tooling.
+
+## Dev Dependencies
+
+- **Babel**: JavaScript compiler.
+- **TypeScript**: Typed superset of JavaScript.
+- **Jest**: JavaScript testing framework.
+- **Cypress**: End-to-end testing framework.
+- **ESLint**: JavaScript linting utility.
+- **Prettier**: Opinionated code formatter.
+- **Husky**: Git hooks made easy.
+- And more...
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
