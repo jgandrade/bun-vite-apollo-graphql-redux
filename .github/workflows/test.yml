@@ -1,12 +1,8 @@
-name: Run Deploy
-on:
-  pull_request:
-    types:
-      - closed
+name: Run Test
+on: [pull_request]
 
 jobs:
-  run_deploy:
-    if: github.event.pull_request.merged == true
+  run_test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,10 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{matrix.node-version}}
+      - name: Install Bun ${{ matrix.node-version }}
+        run: npm install -g bun
 
       - name: Check Dependency Cache
         uses: actions/cache@v4
@@ -27,12 +21,9 @@ jobs:
           path: ./node_modules
           key: ${{runner.os}}-node-${{hashFiles('./bun.lockb')}}
 
-      - name: Install Dependencies
-        run: 
+      - name: Install Bun and Dependencies
+        run:
           bun install
-
-      - name: Run ESLint and Prettier
-        run: bun run lint
 
       - name: Run Tests
         run: bun run test
@@ -46,6 +37,4 @@ jobs:
           bun run dev &
           sleep 10 &&
           bun run cypress-test
-
-      - name: Run Build
-        run: bun run build
+          
