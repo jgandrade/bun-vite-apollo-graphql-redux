@@ -10,7 +10,7 @@ module.exports = {
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs", ".github/**", "jest.config.mjs", "babel.config.cjs", "cypress.config.ts", "cypress/support"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh"],
+  plugins: ["react-refresh", "jest"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
