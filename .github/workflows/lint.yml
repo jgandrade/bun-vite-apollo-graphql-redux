@@ -21,8 +21,10 @@ jobs:
           path: ./node_modules
           key: ${{runner.os}}-node-${{hashFiles('./bun.lockb')}}
 
-      - name: Install Dependencies
-        run: bun install
+      - name: Install Bun and Dependencies
+        run:
+          npm install -g bun 
+          bun install
 
       - name: Run ESLint and Prettier
         run: bun run lint

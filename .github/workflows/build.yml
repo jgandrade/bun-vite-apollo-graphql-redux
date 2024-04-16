@@ -23,7 +23,9 @@ jobs:
           key: ${{runner.os}}-node-${{hashFiles('./bun.lockb')}}
 
       - name: Install Dependencies
-        run: bun install
+        run: 
+          npm install -g bun 
+          bun install
 
       - name: Run Build
         run: bun run build
