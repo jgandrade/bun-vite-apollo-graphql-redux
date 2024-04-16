@@ -14,6 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -28,7 +29,6 @@ jobs:
 
       - name: Install Dependencies
         run: 
-          npm install -g bun 
           bun install
 
       - name: Run ESLint and Prettier
