@@ -8,7 +8,7 @@ module.exports = {
     "airbnb", 
     "airbnb-typescript"
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", ".github/**", "jest.config.mjs", "babel.config.cjs", "cypress.config.ts", "cypress/support"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", ".github", "jest.config.mjs", "babel.config.cjs", "cypress.config.ts", "cypress/support"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh", "jest"],
   rules: {

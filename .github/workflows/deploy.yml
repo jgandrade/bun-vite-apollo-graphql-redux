@@ -34,8 +34,18 @@ jobs:
       - name: Run ESLint and Prettier
         run: bun run lint
 
+      - name: Run Tests
+        run: bun run test
+
+      - name: Install Cypress
+        run:
+          bun cypress install
+
+      - name: Run Cypress
+        run: |
+          bun run dev &
+          sleep 10 &&
+          bun run cypress-test
+
       - name: Run Build
         run: bun run build
-
-      - name: Run Test
-        run: bun run test
