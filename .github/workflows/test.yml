@@ -28,8 +28,11 @@ jobs:
       - name: Run Tests
         run: bun run test
 
-      - name: Run Cypress
+      - name: Install Cypress
         run:
           bun cypress install
+
+      - name: Install Cypress
+        run:
           bun run cypress-test
           
