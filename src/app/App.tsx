@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import './App.css';
 
 function App(): React.ReactNode {
@@ -7,11 +6,6 @@ function App(): React.ReactNode {
 
   return (
     <>
-      <div>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>Vite + React</h1>
       <div className="card">
         <button type="button" onClick={() => setCount((prevCount) => prevCount + 1)}>
