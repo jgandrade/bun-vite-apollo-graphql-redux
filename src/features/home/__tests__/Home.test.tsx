@@ -10,7 +10,7 @@ test('loads and displays greeting', async () => {
 
   // ACT
   await userEvent.click(screen.getByText('Load Greeting'));
-  const header = await screen.findByTestId('page-headers');
+  const header = await screen.findByTestId('page-header');
 
   // ASSERT
   expect(header).toHaveTextContent('Hello Home');
