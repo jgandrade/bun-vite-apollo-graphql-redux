@@ -18,6 +18,6 @@ module.exports = {
     ],
   },
   parserOptions: {
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
+    project: ["./tsconfig.json", "./tsconfig.node.json", "./cypress/tsconfig.json"],
   }
 };
