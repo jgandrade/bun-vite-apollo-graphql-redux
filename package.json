@@ -8,6 +8,7 @@
     "build": "tsc && bunx --bun vite build",
     "lint": "bunx --bun eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "test": "jest",
+    "cypress-test": "cypress run",
     "preview": "vite preview"
   },
   "dependencies": {
