@@ -2,7 +2,7 @@ name: Run Test
 on: [pull_request]
 
 jobs:
-  run_lint:
+  run_test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -32,7 +32,7 @@ jobs:
         run:
           bun cypress install
 
-      - name: Install Cypress
+      - name: Run Cypress
         run:
           bun run cypress-test
           
