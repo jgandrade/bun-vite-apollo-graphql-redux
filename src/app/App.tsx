@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import RouteWrapper from './routes/RouteWrapper';
 import userStore from './stores/userStore';
-import './App.css';
+import '../App.css';
 
 function App(): React.ReactNode {
   return (
