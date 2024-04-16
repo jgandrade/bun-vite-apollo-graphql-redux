@@ -2,7 +2,10 @@ import React from 'react';
 
 function Home(): React.ReactNode {
   return (
-    <div>Home</div>
+    <div>
+      <header data-testid="page-header">Hello Home</header>
+      <button type="button" disabled>Load Greeting</button>
+    </div>
   );
 }
 

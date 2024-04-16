@@ -1,0 +1,31 @@
+name: Run Test
+on: [pull_request]
+
+jobs:
+  run_lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node-version}}
+
+      - name: Check Dependency Cache
+        uses: actions/cache@v4
+        with:
+          path: ./node_modules
+          key: ${{runner.os}}-node-${{hashFiles('./bun.lockb')}}
+
+      - name: Install Bun and Dependencies
+        run:
+          bun install
+
+      - name: Run Test
+        run: bun run test
