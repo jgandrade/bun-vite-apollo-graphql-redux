@@ -33,7 +33,8 @@ jobs:
           bun cypress install
 
       - name: Run Cypress
-        run:
-          bun run dev
+        run: |
+          bun run dev &
+          sleep 10 &&
           bun run cypress-test
           
